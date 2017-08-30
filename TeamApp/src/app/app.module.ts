@@ -1,3 +1,6 @@
+import { UserAdministrationModule } from './modules/user-administration/user-administration.module';
+import { HomeModule } from './modules/home/home.module';
+import { SharedModule } from './modules/shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,7 +16,10 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    SharedModule,
+    HomeModule,
+    UserAdministrationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
