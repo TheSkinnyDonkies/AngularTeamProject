@@ -4,7 +4,7 @@
     <h2>Join now</h2>
 </div>
 
-<form [formGroup]="userForm" *ngIf="newUser" (ngSubmit)="signup()">
+<!-- <form [formGroup]="userForm" *ngIf="newUser" (ngSubmit)="signup()">
 
     <h3>New User Signup</h3>
 
@@ -15,4 +15,19 @@
     <input type="password" id="password" class="input" formControlName="password" required>
 
     <button type="submit" class="button">Submit</button>
-</form>
+</form> -->
+
+<div class="form-container">
+    <h2>Email and Password Login</h2>
+
+    <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+
+    <form #formData='ngForm' (ngSubmit)="signup(formData)">
+
+        <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
+        <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+
+        <button type="submit" [disabled]="!formData.valid" class="basic-btn">Log in</button>
+        <a routerLink="/signup" class="alc">Don't have an account?</a>
+    </form>
+</div>
