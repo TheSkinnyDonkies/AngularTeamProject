@@ -1,8 +1,9 @@
+import { AuthService } from './../services/auth.service';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  providers: []
+  providers: [AuthService]
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parent: CoreModule) {

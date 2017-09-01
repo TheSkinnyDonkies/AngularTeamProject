@@ -44,7 +44,7 @@ export class AuthService {
     }
 
     // Returns current user display name or Guest
-    get currentUserDisplayName(): string {
+    currentUserDisplayName(): string {
         if (!this.authState) {
             return 'Guest';
         }else if (this.currentUserAnonymous) {

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgForm, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UserAdministrationRoutingModule } from './user-administration-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -9,7 +10,9 @@ import { MembersComponent } from './members/members.component';
 @NgModule({
   imports: [
     CommonModule,
-    UserAdministrationRoutingModule
+    UserAdministrationRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     LoginComponent,

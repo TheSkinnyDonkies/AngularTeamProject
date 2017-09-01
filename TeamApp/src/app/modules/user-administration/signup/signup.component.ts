@@ -1,8 +1,9 @@
+import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
+import { NgForm, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -11,31 +12,22 @@ import { Observable } from 'rxjs/Observable';
 })
 export class SignupComponent implements OnInit {
 
-  state: '';
-  error: any;
+  userForm = new FormGroup({
+    email: new FormControl(),
+    password: new FormControl()
+  });
+  newUser = true; // to toggle login or signup form
+  passReset = false; // set to true when password reset is triggered
 
-  constructor(public afAuth: AngularFireAuth, private router: Router) {
+  constructor(private router: Router, private authService: AuthService) {
 
   }
-
-  onSubmit(formData) {
-    if (formData.valid) {
-      console.log(formData.value);
-      this.af.auth.createUser({
-        email: formData.value.email,
-        password: formData.value.password
-      }).then(
-        (success) => {
-          console.log(success);
-          this.router.navigate(['/login']);
-        }).catch(
-        (err) => {
-          console.log(err);
-          this.error = err;
-        });
-    }
+  signup() {
+    this.authService.emailSignUp(this.userForm.value['email'], this.userForm.value['password']);
   }
-
+  toggleForm() {
+    this.newUser = !this.newUser;
+  }
   ngOnInit() {
   }
 
