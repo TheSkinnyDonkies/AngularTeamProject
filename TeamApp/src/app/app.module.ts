@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { MaterializeModule } from 'angular2-materialize';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AlertModule.forRoot(),
     SharedModule,
     HomeModule,
-    UserAdministrationModule
+    UserAdministrationModule,
+    MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
