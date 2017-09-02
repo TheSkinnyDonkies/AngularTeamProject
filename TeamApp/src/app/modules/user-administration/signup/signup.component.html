@@ -12,19 +12,18 @@
 </form> -->
 <h2>Email and Password Login</h2>
 <div class="row">
-    <form class="col s12" #formData='ngForm' (ngSubmit)="signup(formData)">
+    <form class="col s12" (ngSubmit)="signup(formData)" #formData='ngForm'>
         <div class="row">
             <div class="input-field col s6">
-                <input id="email" type="text" (ngModel)="email" name="email" class="validate" required>
+                <input type="text" (ngModel)="email" name="email" class="validate" required>
                 <label for="email">Email Address</label>
             </div>
             <div class="input-field col s6">
-                <input id="password" type="password" (ngModel)="password" name="password" class="validate" required>
+                <input type="password" (ngModel)="password" name="password" class="validate" required>
                 <label for="password">Password</label>
             </div>
         </div>
-
-        <a class="waves-effect waves-light btn-large" (click)="signup(formData)">Log in</a>
+        <input type="button" class="waves-effect waves-light btn-large" (click)="signup(formData)" value="Log in" [disabled]="!formData.valid">
         <a routerLink="/signup" class="alc ">Don't have an account?</a>
     </form>
 </div>
