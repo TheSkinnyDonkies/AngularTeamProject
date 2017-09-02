@@ -24,8 +24,8 @@ export class SignupComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) {
 
   }
-  // signup() {
-  //   this.authService.emailSignUp(this.userForm.value['email'], this.userForm.value['password']);
+  // signup(formData) {
+  //   this.authService.emailSignUp(formData.value.email, formData.value.password);
   // }
 
   toggleForm() {
