@@ -11,23 +11,11 @@ import { NgForm, FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  state: '';
-  error: any;
-  // userForm = new FormGroup({
-  //   email: new FormControl(),
-  //   password: new FormControl()
-  // });
   newUser = true; // to toggle login or signup form
-  passReset = false; // set to true when password reset is triggered
 
   constructor(private router: Router, private authService: AuthService) {
 
   }
-  // signup(formData) {
-  //   this.authService.emailSignUp(formData.value.email, formData.value.password);
-  // }
-
   toggleForm() {
     this.newUser = !this.newUser;
   }
