@@ -11,13 +11,9 @@ import { NgForm, FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  newUser = true; // to toggle login or signup form
 
   constructor(private router: Router, private authService: AuthService) {
 
-  }
-  toggleForm() {
-    this.newUser = !this.newUser;
   }
   signup(formData) {
     if (formData.valid) {
