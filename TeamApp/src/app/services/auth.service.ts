@@ -94,7 +94,9 @@ export class AuthService {
             .catch(error => console.log(error));
     }
 
-
+    authUser() {
+        return this.user;
+    }
 
     //// Sign Out ////
 

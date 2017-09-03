@@ -2,17 +2,16 @@
     <div class="nav-wrapper">
         <a class='brand-logo' [routerLink]="[ '/home' ]">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a [routerLink]="[ '/login' ]">Go To Login Page</a></li>
+            <li *ngIf="!(user|async)?.uid"><a [routerLink]="[ '/login' ]">Go To Login Page</a></li>
+            <li *ngIf="(user|async)?.uid"><a [routerLink]="[ '/home' ]" (click)="logout()">Log Out</a></li>
             <li><a [routerLink]="[ '/signup' ]">Create Account</a></li>
-            <li><a [routerLink]="[ '/members' ]">Members</a></li>
         </ul>
     </div>
     <div class="nav-content">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a [routerLink]="[ '/home' ]">Go Home</a></li>
             <li class="tab"><a class="active" href="#test2">Test 2</a></li>
-            <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
-            <li class="tab"><a href="#test4">Test 4</a></li>
+            <li class="tab" *ngIf="(user|async)?.uid"><a [routerLink]="[ '/members' ]">Members</a></li>
         </ul>
     </div>
 </nav>
