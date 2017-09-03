@@ -86,6 +86,7 @@ export class AuthService {
             .then((user) => {
                 this.authState = user;
                 this.updateUserData();
+                this.router.navigate(['members']);
             })
             .catch(error => console.log(error));
     }
