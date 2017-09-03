@@ -20,12 +20,12 @@ import { MaterializeModule } from 'angular2-materialize';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase), // TODO: should be in core module ?!?
+    AngularFireModule.initializeApp(environment.firebase), // TODO: should be in core module?!?
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     AppRoutingModule,
     CoreModule,
-    AlertModule.forRoot(),
+    AlertModule.forRoot(), // TODO: should be abstracted in core.module with all the materialize and bootstrap and so on?!?!
     SharedModule,
     HomeModule,
     UserAdministrationModule,

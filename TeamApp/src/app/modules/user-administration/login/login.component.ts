@@ -12,10 +12,16 @@ import { Observable } from 'rxjs/Observable';
 })
 export class LoginComponent implements OnInit {
   user: Observable<firebase.User>;
-  constructor(private authService: AuthService) {
+  email: string;
+  password: string;
+  constructor(private authService: AuthService, private router: Router) {
     this.user = authService.currentUser;
   }
-  login() {
+  emailLogin() {
+    this.authService.emailLogin(this.email, this.password);
+  }
+
+  googleLogin() {
     this.authService.googleLogin();
   }
   logout() {
@@ -23,5 +29,4 @@ export class LoginComponent implements OnInit {
  }
   ngOnInit() {
   }
-
 }
