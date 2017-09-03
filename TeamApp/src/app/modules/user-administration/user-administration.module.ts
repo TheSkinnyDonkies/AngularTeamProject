@@ -1,3 +1,4 @@
+import { EmailLoginComponent } from './login/email-login/email-login.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgForm, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,12 +19,14 @@ import { MembersComponent } from './members/members.component';
   declarations: [
     LoginComponent,
     SignupComponent,
-    MembersComponent
+    MembersComponent,
+    EmailLoginComponent
 ],
   exports: [
     LoginComponent,
     SignupComponent,
-    MembersComponent
+    MembersComponent,
+    EmailLoginComponent
   ]
 })
 export class UserAdministrationModule { }

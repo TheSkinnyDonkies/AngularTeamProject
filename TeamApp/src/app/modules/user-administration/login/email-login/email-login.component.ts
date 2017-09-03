@@ -1,5 +1,4 @@
-import { User } from './../../../models/user.models';
-import { AuthService } from './../../../services/auth.service';
+import { AuthService } from './../../../../services/auth.service';
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -7,21 +6,20 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-email-login',
+  templateUrl: './email-login.component.html',
+  styleUrls: ['./email-login.component.css']
 })
-export class LoginComponent implements OnInit {
-  user: Observable<firebase.User>;
+export class EmailLoginComponent implements OnInit {
+
   constructor(private authService: AuthService, private router: Router) { }
-  googleLogin() {
-    this.authService.googleLogin()
+
+  emailLogin(formData) {
+    this.authService.emailLogin({ email: formData.value.email, password: formData.value.password })
       .then(resolve => this.router.navigate(['/members']))
       .catch(error => console.log(error));
   }
-  logOut() {
-    this.authService.signOut();
-  }
   ngOnInit() {
   }
+
 }

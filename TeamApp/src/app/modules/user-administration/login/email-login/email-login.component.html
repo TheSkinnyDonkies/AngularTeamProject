@@ -1,6 +1,6 @@
-<h2>New User Signup</h2>
+<h2>Email Login</h2>
 <div class="row">
-    <form class="col s12" (ngSubmit)="signUp(formData)" #formData='ngForm'>
+    <form class="col s12" (ngSubmit)="emailLogin(formData)" #formData='ngForm'>
         <div class="row">
             <div class="input-field col s6">
                 <input type="email" (ngModel)="email" #email="ngModel" name="email" class="validate" required pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$">
@@ -11,7 +11,7 @@
                 <label for="password">Password</label>
             </div>
         </div>
-        <input type="button" class="waves-effect waves-light btn-large" (click)="signUp(formData)" value="Sign Up" [disabled]="!formData.valid">
+        <input type="button" class="waves-effect waves-light btn-large" (click)="emailLogin(formData)" value="Log In" [disabled]="!formData.valid">
         <a routerLink="/signup" class="alc ">Don't have an account?</a>
     </form>
 </div>

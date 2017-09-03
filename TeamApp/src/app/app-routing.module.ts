@@ -1,3 +1,4 @@
+import { EmailLoginComponent } from './modules/user-administration/login/email-login/email-login.component';
 import { AuthGuard } from './services/guards/auth-guard.service';
 import { MembersComponent } from './modules/user-administration/members/members.component';
 import { SignupComponent } from './modules/user-administration/signup/signup.component';
@@ -20,7 +21,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+  },
+  {
+    path: 'login/email-login',
+    component: EmailLoginComponent
   },
   {
     path: 'signup',
