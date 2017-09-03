@@ -1,3 +1,5 @@
+import { AuthGuard } from './services/guards/auth-guard.service';
+import { MembersComponent } from './modules/user-administration/members/members.component';
 import { SignupComponent } from './modules/user-administration/signup/signup.component';
 import { LoginComponent } from './modules/user-administration/login/login.component';
 import { NotFoundComponent } from './modules/shared/not-found/not-found.component';
@@ -23,6 +25,11 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'members',
+    component: MembersComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
