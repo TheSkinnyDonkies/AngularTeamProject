@@ -4,7 +4,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li *ngIf="!(user|async)?.uid"><a [routerLink]="[ '/login' ]">Go To Login Page</a></li>
             <li *ngIf="(user|async)?.uid"><a [routerLink]="[ '/home' ]" (click)="logout()">Log Out</a></li>
-            <li><a [routerLink]="[ '/signup' ]">Create Account</a></li>
+            <li *ngIf="!(user|async)?.uid"><a [routerLink]="[ '/signup' ]">Create Account</a></li>
         </ul>
     </div>
     <div class="nav-content">
