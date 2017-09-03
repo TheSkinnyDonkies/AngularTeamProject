@@ -15,14 +15,12 @@ export class SignupComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) {
 
   }
-  signup(formData) {
+  signUp(formData) {
     if (formData.valid) {
       console.log(formData.value);
       this.authService.emailSignUp({ email: formData.value.email, password: formData.value.password })
-        .then(
-        (success) => {
-          this.router.navigate(['/login']);
-        });
+        .then(resolve => this.router.navigate(['/members']))
+        .catch(error => console.log(error));
     }
   }
   ngOnInit() {

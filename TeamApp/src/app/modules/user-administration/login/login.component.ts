@@ -1,3 +1,4 @@
+import { User } from './../../../models/user.models';
 import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
@@ -15,16 +16,19 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   constructor(private authService: AuthService, private router: Router) {
-    this.user = authService.currentUser;
   }
   emailLogin() {
-    this.authService.emailLogin({ email: this.email, password: this.password });
+    this.authService.emailLogin({ email: this.email, password: this.password })
+      .then(resolve => this.router.navigate(['/members']))
+      .catch(error => console.log(error));
   }
 
   googleLogin() {
-    this.authService.googleLogin();
+    this.authService.googleLogin()
+    .then(resolve => this.router.navigate(['/members']))
+    .catch(error => console.log(error));
   }
-  logout() {
+  logOut() {
     this.authService.signOut();
   }
   ngOnInit() {
