@@ -1,4 +1,9 @@
 .row {
-    margin: 10px;
-    width: 1300px;
+    margin: 25px;
+    text-align: center;
+}
+
+label {
+    color: white;
+    font-size: 18px;
 }
