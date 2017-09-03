@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
   signup(formData) {
     if (formData.valid) {
       console.log(formData.value);
-      this.authService.emailSignUp(formData.value.email, formData.value.password)
+      this.authService.emailSignUp({ email: formData.value.email, password: formData.value.password })
         .then(
         (success) => {
           this.router.navigate(['/login']);

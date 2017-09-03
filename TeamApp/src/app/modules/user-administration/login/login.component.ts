@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     this.user = authService.currentUser;
   }
   emailLogin() {
-    this.authService.emailLogin(this.email, this.password);
+    this.authService.emailLogin({ email: this.email, password: this.password });
   }
 
   googleLogin() {
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
   logout() {
     this.authService.signOut();
- }
+  }
   ngOnInit() {
   }
 }
