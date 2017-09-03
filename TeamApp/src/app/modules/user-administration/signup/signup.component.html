@@ -1,17 +1,24 @@
-<h2>New User Signup</h2>
 <div class="row">
-    <form class="col s12" (ngSubmit)="signUp(formData)" #formData='ngForm'>
-        <div class="row">
-            <div class="input-field col s6">
-                <input type="email" (ngModel)="email" #email="ngModel" name="email" class="validate" required pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$">
-                <label for="email">Email Address</label>
+    <div class="col s12 m6">
+        <div class="card blue darken-3">
+            <div class="card-content white-text">
+                <span class="card-title">New User Signup</span>
             </div>
-            <div class="input-field col s6">
-                <input type="password" (ngModel)="password" #password="ngModel" name="password" class="validate" required>
-                <label for="password">Password</label>
+            <div class="card-action">
+                <form class="col s12" (ngSubmit)="signUp(formData)" #formData='ngForm'>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="email" (ngModel)="email" #email="ngModel" name="email" class="validate" required pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$">
+                            <label for="email">Email Address</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="password" (ngModel)="password" #password="ngModel" name="password" class="validate" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <input type="button" class="waves-effect waves-light btn-large" (click)="signUp(formData)" value="Sign Up" [disabled]="!formData.valid">
+                </form>
             </div>
         </div>
-        <input type="button" class="waves-effect waves-light btn-large" (click)="signUp(formData)" value="Sign Up" [disabled]="!formData.valid">
-        <a routerLink="/signup" class="alc ">Don't have an account?</a>
-    </form>
+    </div>
 </div>
