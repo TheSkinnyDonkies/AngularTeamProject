@@ -10,7 +10,16 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class ImageService {
+    private uid: string;
 
-    constructor() { }
-
+    constructor(private afAuth: AngularFireAuth, private afDB: AngularFireDatabase) {
+        afAuth.authState.subscribe(auth => {
+            if (auth !== undefined && auth !== null) {
+                this.uid = auth.uid;
+            }
+        });
+    }
+    getImages(): Observable<GalleryImage[]> {
+        return this.afDB.list('uploads');
+    }
 }
