@@ -7,7 +7,6 @@ import { UserAdministrationRoutingModule } from './user-administration-routing.m
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
-import { UploadComponent } from './upload/upload.component';
 
 
 @NgModule({
@@ -21,15 +20,13 @@ import { UploadComponent } from './upload/upload.component';
     LoginComponent,
     SignupComponent,
     MembersComponent,
-    EmailLoginComponent,
-    UploadComponent
+    EmailLoginComponent
 ],
   exports: [
     LoginComponent,
     SignupComponent,
     MembersComponent,
-    EmailLoginComponent,
-    UploadComponent
+    EmailLoginComponent
   ]
 })
 export class UserAdministrationModule { }

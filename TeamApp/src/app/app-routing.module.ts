@@ -1,5 +1,5 @@
+import { UploadComponent } from './modules/gallery/upload/upload.component';
 import { GalleryComponent } from './modules/gallery/gallery/gallery.component';
-import { UploadComponent } from './modules/user-administration/upload/upload.component';
 import { EmailLoginComponent } from './modules/user-administration/login/email-login/email-login.component';
 import { AuthGuard } from './services/guards/auth-guard.service';
 import { MembersComponent } from './modules/user-administration/members/members.component';
@@ -10,6 +10,7 @@ import { HomeComponent } from './modules/home/home/home.component';
 import { NavbarComponent } from './modules/shared/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 
 const routes: Routes = [
   {

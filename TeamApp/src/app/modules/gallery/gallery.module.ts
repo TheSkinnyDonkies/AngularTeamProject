@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImageDetailComponent } from './image-detail/image-detail.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   imports: [
@@ -14,11 +15,13 @@ import { ImageDetailComponent } from './image-detail/image-detail.component';
   ],
   declarations: [
     GalleryComponent,
-    ImageDetailComponent
-  ],
+    ImageDetailComponent,
+    UploadComponent
+],
   exports: [
     GalleryComponent,
-    ImageDetailComponent
+    ImageDetailComponent,
+    UploadComponent
   ],
   providers: [
     ImageService,
