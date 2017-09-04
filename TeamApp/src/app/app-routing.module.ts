@@ -1,3 +1,4 @@
+import { ImageDetailComponent } from './modules/gallery/image-detail/image-detail.component';
 import { UploadComponent } from './modules/gallery/upload/upload.component';
 import { GalleryComponent } from './modules/gallery/gallery/gallery.component';
 import { EmailLoginComponent } from './modules/user-administration/login/email-login/email-login.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'gallery',
     component: GalleryComponent
+  },
+  {
+    path: 'image/:id',
+    component: ImageDetailComponent
   },
   {
     path: 'members',
