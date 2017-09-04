@@ -1,4 +1,4 @@
-import { User } from './../models/user.models';
+import { User } from './../models/user.model';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
