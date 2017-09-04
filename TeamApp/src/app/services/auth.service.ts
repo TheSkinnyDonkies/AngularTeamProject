@@ -17,8 +17,7 @@ export class AuthService {
 
     //// Social Auth ////
     googleLogin() { // TODO: maybe const provider should be injected from outside!
-        const provider = new firebase.auth.GoogleAuthProvider();
-        return this.afAuth.auth.signInWithPopup(provider);
+        return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     }
 
     //// Email/Password Auth ////
