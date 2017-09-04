@@ -1,3 +1,4 @@
+import { GalleryComponent } from './modules/gallery/gallery/gallery.component';
 import { UploadComponent } from './modules/user-administration/upload/upload.component';
 import { EmailLoginComponent } from './modules/user-administration/login/email-login/email-login.component';
 import { AuthGuard } from './services/guards/auth-guard.service';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'gallery',
+    component: GalleryComponent
   },
   {
     path: 'members',

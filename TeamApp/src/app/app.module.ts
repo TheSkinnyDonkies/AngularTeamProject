@@ -1,3 +1,4 @@
+import { GalleryModule } from './modules/gallery/gallery.module';
 import { environment } from './../environments/environment';
 import { UserAdministrationModule } from './modules/user-administration/user-administration.module';
 import { HomeModule } from './modules/home/home.module';
@@ -28,6 +29,7 @@ import { MaterializeModule } from 'angular2-materialize';
     AlertModule.forRoot(), // TODO: should be abstracted in core.module with all the materialize and bootstrap and so on?!?!
     SharedModule,
     HomeModule,
+    GalleryModule,
     UserAdministrationModule,
     MaterializeModule
   ],
