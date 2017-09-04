@@ -1,3 +1,9 @@
+<div *ngIf="upload">
+    <div class="progress">
+        <div class="indeterminate" [ngStyle]="{'width': upload?.progress + '%'}"></div>
+    </div>
+    Progress: {{upload?.progress}}% Complete
+</div>
 <div>
     <h2>Upload New Images</h2>
     <input type="file" (change)="handleFiles($event)" multiple>
