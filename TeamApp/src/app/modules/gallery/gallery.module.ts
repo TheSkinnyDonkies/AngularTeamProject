@@ -1,3 +1,5 @@
+import { UploadService } from './../../services/upload.service';
+import { ImageService } from './../../services/image.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,10 +15,14 @@ import { ImageDetailComponent } from './image-detail/image-detail.component';
   declarations: [
     GalleryComponent,
     ImageDetailComponent
-],
+  ],
   exports: [
     GalleryComponent,
     ImageDetailComponent
+  ],
+  providers: [
+    ImageService,
+    UploadService
   ]
 })
 export class GalleryModule { }

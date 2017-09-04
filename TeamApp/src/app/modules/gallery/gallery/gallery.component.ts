@@ -1,3 +1,4 @@
+import { ImageService } from './../../../services/image.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private imageService: ImageService) { }
 
   ngOnInit() {
   }
