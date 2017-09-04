@@ -1,3 +1,11 @@
-<p>
-    gallery works!!!!
-</p>
+<div class="row">
+    <h2>Photos</h2>
+    <div class="card-action">
+        <ul>
+            <li *ngFor="let image of images | async" class="img"></li>
+            <a [routerLink]="['/image', images]">
+                <img src="{{images}}">
+            </a>
+        </ul>
+    </div>
+</div>
