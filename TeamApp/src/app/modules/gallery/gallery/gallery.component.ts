@@ -3,8 +3,6 @@ import { ImageService } from './../../../services/image.service';
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 
 @Component({
@@ -14,6 +12,7 @@ import * as firebase from 'firebase/app';
 })
 export class GalleryComponent implements OnInit, OnChanges {
   images: Observable<GalleryImage[]>;
+
   constructor(private imageService: ImageService) { }
 
   ngOnInit() {

@@ -1,6 +1,6 @@
 <div *ngIf="upload">
     <div class="progress">
-        <div class="indeterminate" [ngStyle]="{'width': upload?.progress + '%'}"></div>
+        <div class="determinate" [ngStyle]="{'width': upload?.progress + '%'}"></div>
     </div>
     Progress: {{upload?.progress}}% Complete
 </div>

@@ -1,11 +1,10 @@
 <div class="row">
     <h2>Photos</h2>
-    <div class="card-action">
-        <ul>
-            <li *ngFor="let image of images | async" class="img"></li>
-            <a [routerLink]="['/image', images]">
-                <img src="{{images}}">
+    <ul>
+        <li *ngFor="let image of images | async" class="img">
+            <a [routerLink]="['/image', image.$key]">
+                <img src="{{image.url}}">
             </a>
-        </ul>
-    </div>
+        </li>
+    </ul>
 </div>
