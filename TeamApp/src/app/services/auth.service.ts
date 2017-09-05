@@ -20,6 +20,10 @@ export class AuthService {
         return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     }
 
+    facebookLogin() {
+        return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+    }
+
     //// Email/Password Auth ////
 
     emailSignUp(user: User) {
@@ -38,6 +42,6 @@ export class AuthService {
 
     signOut(): void {
         this.afAuth.auth.signOut()
-        .then(resolve => this.router.navigate(['/']));
+            .then(resolve => this.router.navigate(['/']));
     }
 }

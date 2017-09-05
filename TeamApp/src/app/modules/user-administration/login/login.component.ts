@@ -16,7 +16,13 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
   googleLogin() {
     this.authService.googleLogin()
-      .then(resolve => this.router.navigate(['/members']))
+      .then(resolve => this.router.navigate(['/gallery']))
+      .catch(error => console.log(error));
+  }
+
+  facebookLogin() {
+    this.authService.facebookLogin()
+      .then(resolve => this.router.navigate(['/gallery']))
       .catch(error => console.log(error));
   }
   logOut() {
