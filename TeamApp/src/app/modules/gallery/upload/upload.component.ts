@@ -12,7 +12,7 @@ export class UploadComponent implements OnInit {
 
   files: FileList;
   upload: Upload;
-
+  isSendingFilesEnabled: boolean;
   constructor(private uploadService: UploadService) { }
 
   uploadFiles() {
@@ -22,10 +22,12 @@ export class UploadComponent implements OnInit {
       console.log(filesToUpload[index]);
       this.upload = new Upload(filesToUpload[index]);
       this.uploadService.uploadFile(this.upload);
+      this.isSendingFilesEnabled = !this.isSendingFilesEnabled;
     });
   }
   handleFiles(event) {
     this.files = event.target.files;
+    this.isSendingFilesEnabled = !this.isSendingFilesEnabled;
   }
   ngOnInit() {
   }

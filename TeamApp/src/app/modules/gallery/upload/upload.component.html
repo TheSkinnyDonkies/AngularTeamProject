@@ -7,5 +7,5 @@
 <div>
     <h2>Upload New Images</h2>
     <input type="file" (change)="handleFiles($event)" multiple>
-    <button class="btn btn-danger" (click)="uploadFiles()">Upload Images</button>
+    <button class="waves-effect waves-light btn-large" (click)="uploadFiles()" [disabled]="!isSendingFilesEnabled">Upload Images</button>
 </div>
