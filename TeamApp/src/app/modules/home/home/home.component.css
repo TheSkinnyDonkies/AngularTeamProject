@@ -1,4 +1,12 @@
 .card-text {
     font-size: 17px;
-    color: white;
+    color: black;
+}
+
+.card {
+    background-color: #ECF0EC;
+}
+
+.card-title {
+    font-weight: normal;
 }
