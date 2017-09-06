@@ -9,8 +9,8 @@ export class Upload {
     file: File;
     url: string;
     progress: number;
-    uploadedOn: any;
-    uploadedBy: any;
+    uploadedOn: string;
+    uploadedBy: string;
 
     constructor(private currentFile: File, afAuth: AngularFireAuth) {
         this.file = currentFile;

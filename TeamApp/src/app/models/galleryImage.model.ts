@@ -8,5 +8,5 @@ export class GalleryImage {
     name?: string;
     url?: string;
     uploadedOn?: string;
-    uploadedBy?: any;
+    uploadedBy?: string;
 }
