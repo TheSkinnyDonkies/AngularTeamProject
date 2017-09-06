@@ -17,7 +17,18 @@ export class NavbarComponent implements OnInit {
 
   title: 'Title to be changed';
   user: Observable<firebase.User>;
-  constructor(private authService: AuthService, private router: Router  ) {   }
+  currentUserEmail: string;
+  currenUserNameByEmail: string;
+
+  constructor(private authService: AuthService, private router: Router) {
+    this.authService.getCurrentAuthUser()
+      .subscribe(auth => {
+        if (auth !== undefined && auth !== null) {
+          this.currentUserEmail = auth.email;
+          this.currenUserNameByEmail = this.currentUserEmail.substr(0, this.currentUserEmail.indexOf('@'));
+        }
+      });
+  }
 
   logout() {
     this.authService.signOut();
