@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from './user.model';
 import { Observable } from 'rxjs/Observable';
@@ -12,9 +13,9 @@ export class Upload {
     uploadedOn: string;
     uploadedBy: string;
 
-    constructor(private currentFile: File, afAuth: AngularFireAuth) {
+    constructor(private currentFile: File, authService: AuthService) {
         this.file = currentFile;
-        afAuth.authState.subscribe(auth => {
+        authService.getCurrentAuthUser().subscribe(auth => {
             if (auth !== undefined && auth !== null) {
                 this.uploadedBy = auth.email;
             }

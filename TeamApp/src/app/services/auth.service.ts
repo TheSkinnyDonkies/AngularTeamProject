@@ -9,10 +9,10 @@ import * as firebase from 'firebase/app';
 
 @Injectable()
 export class AuthService {
-    public user: Observable<firebase.User>;
+    public currentUser: Observable<firebase.User>;
 
     constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router: Router) {
-        this.user = afAuth.authState;
+        this.currentUser = afAuth.authState;
     }
 
     //// Social Auth ////
@@ -33,9 +33,8 @@ export class AuthService {
     emailLogin(user: User) {
         return this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
     }
-
-    authUser() {
-        return this.user;
+    getCurrentAuthUser() {
+        return this.currentUser;
     }
 
     //// Sign Out ////

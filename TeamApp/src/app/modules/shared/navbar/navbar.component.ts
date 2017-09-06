@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
     this.authService.signOut();
   }
   ngOnInit() {
-    this.user = this.authService.authUser();
+    this.user = this.authService.getCurrentAuthUser();
   }
 
 }

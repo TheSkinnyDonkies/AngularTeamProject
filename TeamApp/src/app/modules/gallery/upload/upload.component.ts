@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Upload } from './../../../models/upload.model';
 import { Component, OnInit } from '@angular/core';
@@ -14,14 +15,14 @@ export class UploadComponent implements OnInit {
   files: FileList;
   upload: Upload;
   isSendingFilesEnabled: boolean;
-  constructor(private uploadService: UploadService, private afAuth: AngularFireAuth) { }
+  constructor(private uploadService: UploadService, private authService: AuthService) { }
 
   uploadFiles() {
     const filesToUpload = this.files;
     const filesIndexs = _.range(filesToUpload.length);
     _.each(filesIndexs, (index) => {
       console.log(filesToUpload[index]);
-      this.upload = new Upload(filesToUpload[index], this.afAuth);
+      this.upload = new Upload(filesToUpload[index], this.authService);
       this.uploadService.uploadFile(this.upload);
       this.isSendingFilesEnabled = !this.isSendingFilesEnabled;
     });
