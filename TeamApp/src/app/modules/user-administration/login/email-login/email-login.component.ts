@@ -16,7 +16,7 @@ export class EmailLoginComponent implements OnInit {
 
   emailLogin(formData) {
     this.authService.emailLogin({ email: formData.value.email, password: formData.value.password })
-      .then(resolve => this.router.navigate(['/members']))
+      .then(resolve => this.router.navigate(['/user']))
       .catch(error => console.log(error));
   }
   ngOnInit() {

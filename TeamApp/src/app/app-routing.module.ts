@@ -1,9 +1,9 @@
+import { UserComponent } from './modules/user-administration/user/user.component';
 import { ImageDetailComponent } from './modules/gallery/image-detail/image-detail.component';
 import { UploadComponent } from './modules/gallery/upload/upload.component';
 import { GalleryComponent } from './modules/gallery/gallery/gallery.component';
 import { EmailLoginComponent } from './modules/user-administration/login/email-login/email-login.component';
 import { AuthGuard } from './services/guards/auth-guard.service';
-import { MembersComponent } from './modules/user-administration/members/members.component';
 import { SignupComponent } from './modules/user-administration/signup/signup.component';
 import { LoginComponent } from './modules/user-administration/login/login.component';
 import { NotFoundComponent } from './modules/shared/not-found/not-found.component';
@@ -44,8 +44,8 @@ const routes: Routes = [
     component: ImageDetailComponent
   },
   {
-    path: 'members',
-    component: MembersComponent,
+    path: 'user',
+    component: UserComponent,
     canActivate: [AuthGuard]
   },
   {

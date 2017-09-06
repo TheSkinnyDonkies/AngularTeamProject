@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
     if (formData.valid) {
       console.log(formData.value);
       this.authService.emailSignUp({ email: formData.value.email, password: formData.value.password })
-        .then(resolve => this.router.navigate(['/members']))
+        .then(resolve => this.router.navigate(['/user']))
         .catch(error => console.log(error));
     }
   }

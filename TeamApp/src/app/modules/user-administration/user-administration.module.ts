@@ -6,8 +6,7 @@ import { NgForm, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserAdministrationRoutingModule } from './user-administration-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { MembersComponent } from './members/members.component';
-
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   imports: [
@@ -19,13 +18,13 @@ import { MembersComponent } from './members/members.component';
   declarations: [
     LoginComponent,
     SignupComponent,
-    MembersComponent,
-    EmailLoginComponent
+    EmailLoginComponent,
+    UserComponent
 ],
   exports: [
     LoginComponent,
     SignupComponent,
-    MembersComponent,
+    UserComponent,
     EmailLoginComponent
   ]
 })
