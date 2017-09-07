@@ -19,7 +19,7 @@ export class EmailLoginComponent implements OnInit {
   emailLogin(formData) {
     this.authService.emailLogin({ email: formData.value.email, password: formData.value.password })
       .then(resolve => this.router.navigate(['/user']))
-      .catch(error => this.toastrService.getWarningMessage('Invalid Email or Password'));
+      .catch(error => this.toastrService.getErrorMessage(error.message));
   }
   ngOnInit() {
   }

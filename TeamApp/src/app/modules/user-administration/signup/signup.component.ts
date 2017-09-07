@@ -1,5 +1,6 @@
+import { ToastrService } from './../../../services/toastr.service';
 import { AuthService } from './../../../services/auth.service';
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
@@ -12,15 +13,15 @@ import { NgForm, FormGroup, FormControl } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private router: Router, private authService: AuthService) {
-
+  constructor(private router: Router, private authService: AuthService, private toastrService: ToastrService, vcr: ViewContainerRef) {
+    this.toastrService.initToasterService(vcr);
   }
   signUp(formData) {
     if (formData.valid) {
       console.log(formData.value);
       this.authService.emailSignUp({ email: formData.value.email, password: formData.value.password })
         .then(resolve => this.router.navigate(['/user']))
-        .catch(error => console.log(error));
+        .catch(error => this.toastrService.getErrorMessage(error.message));
     }
   }
   ngOnInit() {
