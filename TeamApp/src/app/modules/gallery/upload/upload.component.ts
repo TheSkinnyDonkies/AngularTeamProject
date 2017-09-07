@@ -29,6 +29,7 @@ export class UploadComponent implements OnInit {
       this.upload = new Upload(filesToUpload[index], this.authService);
       this.uploadService.uploadFile(this.upload);
       this.isSendingFilesEnabled = !this.isSendingFilesEnabled;
+      this.toastr.success('Image Uploaded!', 'Success!');
     });
   }
   handleFiles(event) {
@@ -36,6 +37,5 @@ export class UploadComponent implements OnInit {
     this.isSendingFilesEnabled = !this.isSendingFilesEnabled;
   }
   ngOnInit() {
-    this.toastr.success('You are awesome!', 'Success!');
   }
 }
