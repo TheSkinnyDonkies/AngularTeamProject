@@ -19,16 +19,8 @@ const routes: Routes = [
     loadChildren: './modules/home/home.module#HomeModule'
   },
   {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'login/email-login',
-    component: EmailLoginComponent
-  },
-  {
-    path: 'signup',
-    component: SignupComponent
+    path: '',
+    loadChildren: './modules/user-administration/user-administration.module#UserAdministrationModule'
   },
   {
     path: 'gallery',
@@ -37,11 +29,6 @@ const routes: Routes = [
   {
     path: 'image/:id',
     component: ImageDetailComponent
-  },
-  {
-    path: 'user',
-    component: UserComponent,
-    canActivate: [AuthGuard]
   },
   {
     path: 'upload',
