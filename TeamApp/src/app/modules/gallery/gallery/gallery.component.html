@@ -5,7 +5,7 @@
             <div class="card-image">
                 <ul>
                     <li *ngFor="let image of images | async" class="img">
-                        <a [routerLink]="['/image', image.$key]">
+                        <a [routerLink]="['/gallery/image', image.$key]">
                             <img src="{{image.url}}">
                         </a>
                         <div class="card-content">
