@@ -28,4 +28,8 @@ export class ToastrService {
     getErrorMessage(message: string) {
         this.toastr.error(message);
     }
+
+    clearAllToasts() {
+        this.toastr.clearAllToasts();
+    }
 }

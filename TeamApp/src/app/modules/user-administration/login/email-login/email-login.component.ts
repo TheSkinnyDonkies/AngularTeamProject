@@ -23,5 +23,4 @@ export class EmailLoginComponent implements OnInit {
   }
   ngOnInit() {
   }
-
 }
