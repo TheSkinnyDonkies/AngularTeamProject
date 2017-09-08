@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
   user: Observable<firebase.User>;
   currentUserEmail: string;
   currenUserNameByEmail: string;
+  public logoPath = './assets/images/logo.png';
 
   constructor(private authService: AuthService, private router: Router) {
     this.authService.getCurrentAuthUser()
