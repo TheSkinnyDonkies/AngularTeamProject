@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [
@@ -11,11 +12,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   declarations: [
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
 ],
   exports: [
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
