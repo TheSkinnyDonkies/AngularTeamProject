@@ -1,3 +1,5 @@
+import { UploadedOnPipe } from './../../pipes/uploadedOn.pipe';
+import { UploadedByPipe } from './../../pipes/uploadedBy.pipe';
 
 import { ImageService } from './../../services/image.service';
 import { NgModule } from '@angular/core';
@@ -17,8 +19,10 @@ import { UploadService } from '../../services/upload.service';
   declarations: [
     GalleryComponent,
     ImageDetailComponent,
-    UploadComponent
-],
+    UploadComponent,
+    UploadedByPipe,
+    UploadedOnPipe
+  ],
   exports: [
     GalleryComponent,
     ImageDetailComponent,

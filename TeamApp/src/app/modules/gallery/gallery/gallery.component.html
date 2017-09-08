@@ -9,8 +9,8 @@
                             <img src="{{image.url}}">
                         </a>
                         <div class="card-content">
-                            <h5>Uploaded By: {{image.uploadedBy}}</h5>
-                            <h5>Uploaded On: {{image.uploadedOn}}</h5>
+                            <h5>{{image.uploadedBy | uploadedBy}}</h5>
+                            <h5>{{image.uploadedOn | date:'medium' | uploadedOn}}</h5>
                         </div>
                     </li>
                 </ul>
