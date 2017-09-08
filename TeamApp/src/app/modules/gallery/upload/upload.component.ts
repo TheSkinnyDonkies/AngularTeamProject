@@ -12,7 +12,6 @@ import * as _ from 'lodash';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit {
-
   files: FileList;
   upload: Upload;
   isSendingFilesEnabled: boolean;

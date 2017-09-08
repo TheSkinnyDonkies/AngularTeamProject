@@ -11,6 +11,8 @@ import { ImageService } from './../../../services/image.service';
   styleUrls: ['./image-detail.component.css']
 })
 export class ImageDetailComponent implements OnInit {
+
+  title: '';
   public imageUrl = '';
 
   constructor(private imageService: ImageService, private route: ActivatedRoute) { }

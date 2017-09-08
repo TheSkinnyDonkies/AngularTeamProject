@@ -1,3 +1,4 @@
+import { ImageDetailTitlePipe } from './../../pipes/imageDetailTitle.pipe';
 import { UploadedOnPipe } from './../../pipes/uploadedOn.pipe';
 import { UploadedByPipe } from './../../pipes/uploadedBy.pipe';
 
@@ -21,7 +22,8 @@ import { UploadService } from '../../services/upload.service';
     ImageDetailComponent,
     UploadComponent,
     UploadedByPipe,
-    UploadedOnPipe
+    UploadedOnPipe,
+    ImageDetailTitlePipe
   ],
   exports: [
     GalleryComponent,
