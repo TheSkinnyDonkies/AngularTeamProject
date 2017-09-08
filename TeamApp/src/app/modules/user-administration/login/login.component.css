@@ -10,3 +10,7 @@
 .card-title {
     font-weight: normal;
 }
+
+#email {
+    text-decoration: none;
+}

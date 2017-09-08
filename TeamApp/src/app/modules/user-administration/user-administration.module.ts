@@ -1,3 +1,4 @@
+import { ChangeButtonColorDirective } from './../../directives/change-button-color.directive';
 import { HideElementDirective } from './../../directives/hide-element.directive';
 import { ChangeBackgroundDirective } from './../../directives/change-background.directive';
 import { EmailLoginComponent } from './login/email-login/email-login.component';
@@ -23,7 +24,8 @@ import { UserComponent } from './user/user.component';
     EmailLoginComponent,
     UserComponent,
     ChangeBackgroundDirective,
-    HideElementDirective
+    HideElementDirective,
+    ChangeButtonColorDirective
 ],
   exports: [
     LoginComponent,
