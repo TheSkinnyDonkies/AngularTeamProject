@@ -1,4 +1,3 @@
-import { ChangeBackgroundDirective } from './directives/change-background.directive';
 import { CoreExternalDependenciesModule } from './core/core-external-dependencies.module';
 import { GalleryModule } from './modules/gallery/gallery.module';
 import { UserAdministrationModule } from './modules/user-administration/user-administration.module';
@@ -12,8 +11,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ChangeBackgroundDirective
+    AppComponent
   ],
   imports: [
     BrowserModule,

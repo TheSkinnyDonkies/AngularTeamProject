@@ -1,3 +1,5 @@
+import { HideElementDirective } from './../../directives/hide-element.directive';
+import { ChangeBackgroundDirective } from './../../directives/change-background.directive';
 import { EmailLoginComponent } from './login/email-login/email-login.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,7 +21,9 @@ import { UserComponent } from './user/user.component';
     LoginComponent,
     SignupComponent,
     EmailLoginComponent,
-    UserComponent
+    UserComponent,
+    ChangeBackgroundDirective,
+    HideElementDirective
 ],
   exports: [
     LoginComponent,
