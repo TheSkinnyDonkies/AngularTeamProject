@@ -10,6 +10,7 @@ import { UserAdministrationRoutingModule } from './user-administration-routing.m
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserComponent } from './user/user.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   imports: [
@@ -25,13 +26,15 @@ import { UserComponent } from './user/user.component';
     UserComponent,
     ChangeBackgroundDirective,
     HideElementDirective,
-    ChangeButtonColorDirective
+    ChangeButtonColorDirective,
+    UsersComponent
 ],
   exports: [
     LoginComponent,
     SignupComponent,
     UserComponent,
-    EmailLoginComponent
+    EmailLoginComponent,
+    UsersComponent
   ]
 })
 export class UserAdministrationModule { }

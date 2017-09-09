@@ -15,6 +15,7 @@
             <li class="tab"><a [routerLink]="[ '/home/contacts' ]">Contacts</a></li>
             <li class="tab" *ngIf="(user|async)?.uid"><a [routerLink]="[ '/gallery/upload' ]">Upload</a></li>
             <li class="tab" *ngIf="(user|async)?.uid"><a [routerLink]="[ '/user' ]">{{currenUserNameByEmail}}</a></li>
+            <li class="tab" *ngIf="(user|async)?.uid"><a [routerLink]="[ '/user/users' ]">Users</a></li>
         </ul>
     </div>
 </nav>

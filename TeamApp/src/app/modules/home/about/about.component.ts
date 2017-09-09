@@ -8,15 +8,8 @@ import { Component, OnInit, OnChanges } from '@angular/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit, OnChanges {
+export class AboutComponent implements OnInit {
 
-  users: Observable<User[]>;
-    constructor(private usersService: UsersService) { }
-    ngOnInit() {
-      this.users = this.usersService.getUsers();
-    }
-    ngOnChanges() {
-      this.users = this.usersService.getUsers();
-    }
-
+  ngOnInit() {
+  }
 }
