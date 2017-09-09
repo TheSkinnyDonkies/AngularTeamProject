@@ -16,7 +16,7 @@ export class AuthService {
     }
 
     //// Social Auth ////
-    googleLogin() { // TODO: maybe const provider should be injected from outside!
+    googleLogin() {
         return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     }
 
@@ -25,7 +25,6 @@ export class AuthService {
     }
 
     //// Email/Password Auth ////
-
     emailSignUp(user: User) {
         return this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
     }
@@ -33,12 +32,13 @@ export class AuthService {
     emailLogin(user: User) {
         return this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
     }
+
+    //// Get Current User ////
     getCurrentAuthUser() {
         return this.currentUser;
     }
 
     //// Sign Out ////
-
     signOut(): void {
         this.afAuth.auth.signOut()
             .then(resolve => this.router.navigate(['/']));
