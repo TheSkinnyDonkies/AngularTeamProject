@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
+import { MustLogInComponent } from './must-log-in/must-log-in.component';
 
 @NgModule({
   imports: [
@@ -13,12 +14,14 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     NavbarComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    MustLogInComponent
 ],
   exports: [
     NavbarComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    MustLogInComponent
   ]
 })
 export class SharedModule { }

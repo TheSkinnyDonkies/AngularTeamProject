@@ -8,3 +8,7 @@
     background-size: 1100px 466px;
     align-content: center;
 }
+
+.card-title {
+    font-weight: normal;
+}

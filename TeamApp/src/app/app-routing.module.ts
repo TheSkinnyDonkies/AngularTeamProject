@@ -1,3 +1,4 @@
+import { MustLogInComponent } from './modules/shared/must-log-in/must-log-in.component';
 import { NotFoundComponent } from './modules/shared/not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -5,7 +6,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '', redirectTo: 'home', pathMatch: 'full'
+  },
+  {
+    path: 'home',
     loadChildren: './modules/home/home.module#HomeModule'
   },
   {
@@ -15,6 +19,10 @@ const routes: Routes = [
   {
     path: 'gallery',
     loadChildren: './modules/gallery/gallery.module#GalleryModule'
+  },
+  {
+    path: 'must-login',
+    component: MustLogInComponent
   },
   {
     path: '**',

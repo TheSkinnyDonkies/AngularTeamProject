@@ -5,6 +5,7 @@
             <li *ngIf="!(user|async)?.uid"><a [routerLink]="[ '/user/login' ]">Log In</a></li>
             <li *ngIf="(user|async)?.uid"><a [routerLink]="[ '/home' ]" (click)="logout()">Log Out</a></li>
             <li *ngIf="!(user|async)?.uid"><a [routerLink]="[ '/user/signup' ]">Create Account</a></li>
+            <li><a [routerLink]="[ '/home/contacts' ]">Contacts</a></li>
         </ul>
     </div>
     <div class="nav-content">

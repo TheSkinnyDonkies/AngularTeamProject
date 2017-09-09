@@ -1,10 +1,14 @@
+import { ContactDetailsComponent } from './contact-details/contact-details.component';
+import { AuthGuard } from './../../services/guards/auth-guard.service';
+import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'contacts/details', component: ContactDetailsComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
