@@ -5,13 +5,14 @@
             <li *ngIf="!(user|async)?.uid"><a [routerLink]="[ '/user/login' ]">Log In</a></li>
             <li *ngIf="(user|async)?.uid"><a [routerLink]="[ '/home' ]" (click)="logout()">Log Out</a></li>
             <li *ngIf="!(user|async)?.uid"><a [routerLink]="[ '/user/signup' ]">Create Account</a></li>
-            <li><a [routerLink]="[ '/home/contacts' ]">Contacts</a></li>
+            <li><a [routerLink]="[ '/home/about' ]">About</a></li>
         </ul>
     </div>
     <div class="nav-content">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a [routerLink]="[ '/home' ]">Go Home</a></li>
             <li class="tab"><a [routerLink]="[ '/gallery' ]">Gallery</a></li>
+            <li class="tab"><a [routerLink]="[ '/home/contacts' ]">Contacts</a></li>
             <li class="tab" *ngIf="(user|async)?.uid"><a [routerLink]="[ '/gallery/upload' ]">Upload</a></li>
             <li class="tab" *ngIf="(user|async)?.uid"><a [routerLink]="[ '/user' ]">{{currenUserNameByEmail}}</a></li>
         </ul>

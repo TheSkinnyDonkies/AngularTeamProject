@@ -1,3 +1,4 @@
+import { AboutComponent } from './about/about.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { AuthGuard } from './../../services/guards/auth-guard.service';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -8,7 +9,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'contacts', component: ContactsComponent },
-  { path: 'contacts/details', component: ContactDetailsComponent, canActivate: [AuthGuard] }
+  { path: 'contacts/details', component: ContactDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
