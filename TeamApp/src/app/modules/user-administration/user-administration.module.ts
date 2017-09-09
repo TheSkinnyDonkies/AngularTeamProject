@@ -1,5 +1,5 @@
 import { ChangeButtonColorDirective } from './../../directives/change-button-color.directive';
-import { HideElementDirective } from './../../directives/hide-element.directive';
+import { ChangeBackColorOnHoverDirective } from './../../directives/hide-element.directive';
 import { ChangeBackgroundDirective } from './../../directives/change-background.directive';
 import { EmailLoginComponent } from './login/email-login/email-login.component';
 import { NgModule } from '@angular/core';
@@ -25,7 +25,7 @@ import { UsersComponent } from './users/users.component';
     EmailLoginComponent,
     UserComponent,
     ChangeBackgroundDirective,
-    HideElementDirective,
+    ChangeBackColorOnHoverDirective,
     ChangeButtonColorDirective,
     UsersComponent
 ],

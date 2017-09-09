@@ -4,9 +4,9 @@
             <span class="card-title">Profile Page</span>
             <div class="card-action">
                 <div class="card-text">
-                    <h2 appChangeBackground>Hello {{currenUserNameByEmail}}</h2>
-                    <h2 appChangeBackground appHideElement> Your Email Address is: {{currentUser.email}}</h2>
-                    <h2 appChangeBackground>Your User ID is: {{currentUser.uid}}</h2>
+                    <p appChangeBackground appChangeBackColorOnHover><strong>Hello </strong>{{currenUserNameByEmail}}</p>
+                    <p appChangeBackground appChangeBackColorOnHover><strong>Your Email Address is: </strong>{{currentUser.email}}</p>
+                    <p appChangeBackground><strong>Your User ID is: </strong>{{currentUser.uid}}</p>
                 </div>
                 <strong><a routerLink="/gallery" routerLinkActive="active">Go To gallery</a></strong>
             </div>

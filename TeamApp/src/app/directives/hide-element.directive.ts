@@ -1,9 +1,9 @@
 import { Directive, HostListener, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[appHideElement]'
+  selector: '[appChangeBackColorOnHover]'
 })
-export class HideElementDirective {
+export class ChangeBackColorOnHoverDirective {
 
   constructor(private elementRef: ElementRef) { }
   @HostListener('mouseenter') onItemMouseenter() {
