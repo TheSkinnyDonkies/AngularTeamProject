@@ -1,3 +1,15 @@
-<h2 appChangeBackground>Hello {{currenUserNameByEmail}}</h2>
-<h2 appChangeBackground appHideElement> Your Email Address is: {{currentUser.email}}</h2>
-<h2 appChangeBackground>Your User ID is: {{currentUser.uid}}</h2>
+<div class="row">
+    <div class="col s12 m7">
+        <div class="card">
+            <span class="card-title">Profile Page</span>
+            <div class="card-action">
+                <div class="card-text">
+                    <h2 appChangeBackground>Hello {{currenUserNameByEmail}}</h2>
+                    <h2 appChangeBackground appHideElement> Your Email Address is: {{currentUser.email}}</h2>
+                    <h2 appChangeBackground>Your User ID is: {{currentUser.uid}}</h2>
+                </div>
+                <strong><a routerLink="/gallery" routerLinkActive="active">Go To gallery</a></strong>
+            </div>
+        </div>
+    </div>
+</div>
