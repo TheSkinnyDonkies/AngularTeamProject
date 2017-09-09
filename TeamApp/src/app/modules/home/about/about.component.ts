@@ -9,7 +9,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-
+  public cautionPath = '../../../../assets/images/caution.png';
   ngOnInit() {
   }
 }

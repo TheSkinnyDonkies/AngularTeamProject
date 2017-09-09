@@ -6,7 +6,7 @@ import { NgModule, Optional, SkipSelf, ViewContainerRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  providers: [AuthService, AuthGuard, ToastrService, UsersService]
+  providers: [AuthService, AuthGuard, ToastrService, UsersService ]
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parent: CoreModule) {

@@ -1,3 +1,4 @@
+import { UsersService } from './../../../services/users.service';
 import { ToastrService } from './../../../services/toastr.service';
 import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit, HostBinding, ViewContainerRef } from '@angular/core';
@@ -13,7 +14,8 @@ import { NgForm, FormGroup, FormControl } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private router: Router, private authService: AuthService, private toastrService: ToastrService, vcr: ViewContainerRef) {
+  constructor(private router: Router, private authService: AuthService, private toastrService: ToastrService,
+    vcr: ViewContainerRef, private usersService: UsersService) {
     this.toastrService.initToasterService(vcr);
   }
   signUp(formData) {
@@ -21,6 +23,7 @@ export class SignupComponent implements OnInit {
       console.log(formData.value);
       this.authService.emailSignUp({ email: formData.value.email, password: formData.value.password })
         .then(resolve => this.router.navigate(['/user']))
+        .then(resolve => this.usersService.addUserToDb())
         .catch(error => this.toastrService.getErrorMessage(error.message));
     }
   }
