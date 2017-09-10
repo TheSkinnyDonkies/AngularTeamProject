@@ -13,9 +13,9 @@ describe('ContactDetailsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ ContactDetailsComponent ]
+      declarations: [ContactDetailsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -27,4 +27,41 @@ describe('ContactDetailsComponent', () => {
   it('should be created successfully', () => {
     expect(component).toBeTruthy();
   });
+
+  // integration tests
+  it('should display the card-title text correctly', () => {
+    // Arrange
+    const debugElement = fixture.debugElement.query(By.css('.card-title'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('Contacts');
+  });
+
+  it('should display a different title after title change is done', () => {
+    // Arrange
+    const debugElement = fixture.debugElement.query(By.css('.card-title'));
+    const htmlElement = debugElement.nativeElement;
+    // Act
+    component.title = 'Test Title';
+    fixture.detectChanges();
+    // Assert
+    expect(htmlElement.textContent).toContain('Test Title');
+  });
+
+  it('should display the card-text text correctly', () => {
+    // Arrange
+    const debugElement = fixture.debugElement.query(By.css('.card-text'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('Shopov');
+  });
+
+  it('should display the card-text text correctly', () => {
+    // Arrange
+    const debugElement = fixture.debugElement.query(By.css('strong'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('GitHub Profile');
+  });
+
 });
