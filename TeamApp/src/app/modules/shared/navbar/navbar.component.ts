@@ -14,11 +14,9 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class NavbarComponent implements OnInit {
-
-  title: 'Title to be changed';
-  user: Observable<firebase.User>;
-  currentUserEmail: string;
-  currenUserNameByEmail: string;
+  public user: Observable<firebase.User>;
+  public currentUserEmail: string;
+  public currenUserNameByEmail: string;
   public logoPath = '../../../../assets/images/logo.png';
 
   constructor(private authService: AuthService, private router: Router) {
@@ -26,11 +24,14 @@ export class NavbarComponent implements OnInit {
       .subscribe(auth => {
         if (auth !== undefined && auth !== null) {
           this.currentUserEmail = auth.email;
-          this.currenUserNameByEmail = this.currentUserEmail.substr(0, this.currentUserEmail.indexOf('@'));
+          this.currenUserNameByEmail = this.returnUserNameOutofAEmail(this.currentUserEmail);
         }
       });
   }
 
+  returnUserNameOutofAEmail(email: string) {
+    return email.substr(0, email.indexOf('@'));
+  }
   logout() {
     this.authService.signOut();
   }
