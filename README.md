@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Gallery Application Description
 
-The application main purpose is to let users share images and photographies through easy to use graphical interface.
-Please use the application cautiously!
-Keep in mind all imagery containing nudity and disrespectful content will be removed imediatly!
+#### The application main purpose is to let users share images and photographies through easy to use graphical interface.
+#### Please use the application cautiously!
+#### Keep in mind all imagery containing nudity and disrespectful content will be removed imediatly!
 
 ## Development server
 
