@@ -30,6 +30,9 @@ export class NavbarComponent implements OnInit {
   }
 
   returnUserNameOutofAEmail(email: string) {
+    if (!email) {
+      throw Error('Email is invalid!');
+    }
     return email.substr(0, email.indexOf('@'));
   }
   logout() {
