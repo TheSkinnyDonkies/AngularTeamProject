@@ -11,14 +11,17 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit, OnChanges {
-  images: Observable<GalleryImage[]>;
+  public images: Observable<GalleryImage[]>;
 
   constructor(private imageService: ImageService) { }
 
+  getImagesFromDB(imgs: any) {
+    this.images = imgs;
+  }
   ngOnInit() {
-    this.images = this.imageService.getImages();
+    this.getImagesFromDB(this.imageService.getImages());
   }
   ngOnChanges() {
-    this.images = this.imageService.getImages();
+    this.getImagesFromDB(this.imageService.getImages());
   }
 }

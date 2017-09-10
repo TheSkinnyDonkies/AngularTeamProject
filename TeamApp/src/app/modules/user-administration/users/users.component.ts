@@ -10,7 +10,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 })
 export class UsersComponent implements OnInit, OnChanges {
 
-  users: Observable<User[]>;
+  public users: Observable<User[]>;
   constructor(private usersService: UsersService) { }
   ngOnInit() {
     this.users = this.usersService.getUsers();

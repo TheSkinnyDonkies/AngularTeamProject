@@ -19,7 +19,6 @@ describe('NavbarComponent', () => {
   let fixture: ComponentFixture<NavbarComponent>;
 
   beforeEach(async(() => {
-
     TestBed.configureTestingModule({
       declarations: [NavbarComponent],
       imports: [

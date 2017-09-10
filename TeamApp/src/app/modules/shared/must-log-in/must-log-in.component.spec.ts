@@ -24,7 +24,7 @@ describe('MustLogInComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created successfully', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -13,9 +13,9 @@ describe('AboutComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ AboutComponent ]
+      declarations: [AboutComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -24,7 +24,15 @@ describe('AboutComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created successfully', () => {
+     // Arrange, Act & Assert
     expect(component).toBeTruthy();
+  });
+
+  it('should property wallPath return expected value', () => {
+    // Arrange
+    const testPath = '/test/path/wall';
+    // Act & Assert
+    expect(component.cautionPath = testPath).toEqual(testPath);
   });
 });

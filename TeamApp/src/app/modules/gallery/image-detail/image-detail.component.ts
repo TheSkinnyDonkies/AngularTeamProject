@@ -12,7 +12,7 @@ import { ImageService } from './../../../services/image.service';
 })
 export class ImageDetailComponent implements OnInit {
 
-  title: '';
+  public title: '';
   public imageUrl = '';
 
   constructor(private imageService: ImageService, private route: ActivatedRoute) { }

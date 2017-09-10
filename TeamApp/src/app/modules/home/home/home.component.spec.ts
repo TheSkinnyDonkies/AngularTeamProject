@@ -24,7 +24,14 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created successfully', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should property cautionPath return expected value', () => {
+    // Arrange
+    const testPath = '/test/path';
+    // Act & Assert
+    expect(component.wallPath = testPath).toEqual(testPath);
   });
 });
