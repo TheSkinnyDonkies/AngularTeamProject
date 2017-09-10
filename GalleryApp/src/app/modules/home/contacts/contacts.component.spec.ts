@@ -27,4 +27,37 @@ describe('ContactsComponent', () => {
   it('should be created successfully', () => {
     expect(component).toBeTruthy();
   });
+
+  // integration tests
+  it('should display the card-title text correctly', () => {
+    // Arrange
+    const debugElement =  fixture.debugElement.query(By.css('.card-title'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('Contacts');
+  });
+
+  it('should display the card-text text correctly', () => {
+    // Arrange
+    const debugElement =  fixture.debugElement.query(By.css('.card-text'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('Please do not contact us!');
+  });
+
+  it('should display login-link text correctly', () => {
+    // Arrange
+    const debugElement =  fixture.debugElement.query(By.css('.login-link'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('Log In');
+  });
+
+  it('should display contacts text correctly', () => {
+    // Arrange
+    const debugElement =  fixture.debugElement.query(By.css('.contacts'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('Contact');
+  });
 });

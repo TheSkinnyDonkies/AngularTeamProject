@@ -60,4 +60,12 @@ describe('HomeComponent', () => {
     // Act & Assert
     expect(htmlElement.textContent).toContain('Log In');
   });
+
+  it('should display signin-link text correctly', () => {
+    // Arrange
+    const debugElement =  fixture.debugElement.query(By.css('.signin-link'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('No Account?');
+  });
 });
