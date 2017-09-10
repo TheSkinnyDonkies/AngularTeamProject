@@ -9,18 +9,22 @@ import { HomeComponent } from './home.component';
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  let debugElement: DebugElement;
+  let htmlElement: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ HomeComponent ]
+      declarations: [HomeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
+    debugElement = fixture.debugElement.query(By.css('span'));
+    htmlElement = debugElement.nativeElement;
     fixture.detectChanges();
   });
 
@@ -33,5 +37,11 @@ describe('HomeComponent', () => {
     const testPath = '/test/path';
     // Act & Assert
     expect(component.wallPath = testPath).toEqual(testPath);
+  });
+
+  // integration tests
+  it('should display the card title text', () => {
+    // Arrange, Act & Assert
+    expect(htmlElement.textContent).toContain('Welcome');
   });
 });
