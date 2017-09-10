@@ -1,3 +1,4 @@
+import { CoreExternalDependenciesModule } from './../../../core/core-external-dependencies.module';
 /* tslint:disable:no-unused-variable */
 import { CoreModule } from './../../../core/core.module';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -18,21 +19,13 @@ describe('NavbarComponent', () => {
   let fixture: ComponentFixture<NavbarComponent>;
 
   beforeEach(async(() => {
-    const firebaseConfig = {
-      apiKey: 'AIzaSyC_wGRiPZ3FmR3gurWmYyC93SB_-4d4pbQ',
-      authDomain: 'team-app-2e616.firebaseapp.com',
-      databaseURL: 'https://team-app-2e616.firebaseio.com',
-      projectId: 'team-app-2e616',
-      storageBucket: 'team-app-2e616.appspot.com',
-      messagingSenderId: '15274871986',
-    };
 
     TestBed.configureTestingModule({
       declarations: [NavbarComponent],
       imports: [
         RouterTestingModule,
         CoreModule,
-        AngularFireModule.initializeApp(firebaseConfig),
+        CoreExternalDependenciesModule
       ],
       providers: [AngularFireAuth, AngularFireDatabase],
     }).compileComponents();
@@ -42,6 +35,11 @@ describe('NavbarComponent', () => {
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('should be created successfully', () => {
+    // Arrange, Act & Assert
+    expect(component).toBeTruthy();
   });
 
   it('should returnUserNameOutofAEmail method get correct user name from email', () => {

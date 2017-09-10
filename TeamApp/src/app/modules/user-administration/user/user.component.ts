@@ -9,17 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
   public currentUser: User;
-  currenUserNameByEmail: string;
+  public currenUserNameByEmail: string;
   constructor(private authService: AuthService) {
     this.authService.getCurrentAuthUser()
       .subscribe(auth => {
         if (auth !== undefined && auth !== null) {
           this.currentUser = auth;
-          this.currenUserNameByEmail = this.currentUser.email.substr(0, this.currentUser.email.indexOf('@'));
+          this.currenUserNameByEmail = this.returnUserNameOutofAUserObj(this.currentUser);
         }
       });
   }
-
+  returnUserNameOutofAUserObj(user: User) {
+    if (!user) {
+      throw Error('User is invalid!');
+    }
+    return user.email.substr(0, this.currentUser.email.indexOf('@'));
+  }
   ngOnInit() {
   }
 

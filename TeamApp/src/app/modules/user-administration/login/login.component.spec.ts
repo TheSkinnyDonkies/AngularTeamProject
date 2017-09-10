@@ -1,3 +1,8 @@
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { CoreExternalDependenciesModule } from './../../../core/core-external-dependencies.module';
+import { UserAdministrationModule } from './../user-administration.module';
+import { CoreModule } from './../../../core/core.module';
 import { RouterTestingModule } from '@angular/router/testing';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -12,10 +17,15 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [ LoginComponent ]
-    })
-    .compileComponents();
+      declarations: [],
+      imports: [
+        RouterTestingModule,
+        CoreModule,
+        UserAdministrationModule,
+        CoreExternalDependenciesModule
+      ],
+      providers: [AngularFireAuth, AngularFireDatabase],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -24,7 +34,7 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created successfully', () => {
     expect(component).toBeTruthy();
   });
 });
