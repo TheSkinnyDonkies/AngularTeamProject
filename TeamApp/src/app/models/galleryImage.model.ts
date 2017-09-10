@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
-export interface GalleryImage {
+export class GalleryImage {
     $key: string;
     name?: string;
     url?: string;
