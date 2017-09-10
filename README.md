@@ -1,8 +1,8 @@
-# Gallery Team
+# Gallery Application Documentation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
 
-## Gallery Team Application Description
+## Gallery Application Description
 
 The application main purpose is to let users share images and photographies through easy to use graphical interface.
 Please use the application cautiously!
