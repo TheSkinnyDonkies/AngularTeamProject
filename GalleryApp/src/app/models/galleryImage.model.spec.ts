@@ -1,6 +1,6 @@
 import { GalleryImage } from './galleryImage.model';
 
-describe('User', () => {
+describe('GalleryImage', () => {
     let model: GalleryImage;
 
     beforeEach(() => {

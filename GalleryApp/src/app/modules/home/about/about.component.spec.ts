@@ -35,4 +35,21 @@ describe('AboutComponent', () => {
     // Act & Assert
     expect(component.cautionPath = testPath).toEqual(testPath);
   });
+
+  // integration tests
+  it('should display the card-title text correctly', () => {
+    // Arrange
+    const debugElement = fixture.debugElement.query(By.css('.card-title'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('About Page');
+  });
+
+  it('should display paragraph text correctly', () => {
+    // Arrange
+    const debugElement = fixture.debugElement.query(By.css('p'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('application main purpose');
+  });
 });
