@@ -4,9 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Gallery Application Description
 
-#### The application main purpose is to let users share images and photographies through easy to use graphical interface.
-#### Please use the application cautiously!
-#### Keep in mind all imagery containing nudity and disrespectful content will be removed imediatly!
+#### **The application main purpose is to let users share images and photographies through easy to use graphical interface.**
+#### **Please use the application cautiously!**
+#### **Keep in mind all imagery containing nudity and disrespectful content will be removed imediatly!**
+
+## The Application is Hosted at:
+
+* <http://localhost:4200/>
 
 ## Development server
 
@@ -24,6 +28,20 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
+
+## Additional Commands
+
+* ng new
+* ng serve
+* ng generate
+* ng lint
+* ng test
+* ng e2e
+* ng build
+* ng get/ng set
+* ng doc
+* ng eject
+* ng xi18n
 
 
 
