@@ -9,8 +9,7 @@ import { HomeComponent } from './home.component';
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  let debugElement: DebugElement;
-  let htmlElement: HTMLElement;
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -23,8 +22,6 @@ describe('HomeComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
-    debugElement = fixture.debugElement.query(By.css('span'));
-    htmlElement = debugElement.nativeElement;
     fixture.detectChanges();
   });
 
@@ -40,8 +37,27 @@ describe('HomeComponent', () => {
   });
 
   // integration tests
-  it('should display the card title text', () => {
-    // Arrange, Act & Assert
+  it('should display the card-title text correctly', () => {
+    // Arrange
+    const debugElement =  fixture.debugElement.query(By.css('.card-title'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
     expect(htmlElement.textContent).toContain('Welcome');
+  });
+
+  it('should display the card-text text correctly', () => {
+    // Arrange
+    const debugElement =  fixture.debugElement.query(By.css('.card-text'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('To Use The Full Functionality Please');
+  });
+
+  it('should display login-link text correctly', () => {
+    // Arrange
+    const debugElement =  fixture.debugElement.query(By.css('.login-link'));
+    const htmlElement = debugElement.nativeElement;
+    // Act & Assert
+    expect(htmlElement.textContent).toContain('Log In');
   });
 });
