@@ -2,9 +2,10 @@
     "name": "team-app",
     "version": "0.0.0",
     "license": "MIT",
+    "main": "server.js",
     "scripts": {
         "ng": "ng",
-        "start": "node server.js",
+        "start": "ng serve",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
@@ -66,7 +67,7 @@
         "tslint": "~5.3.2"
     },
     "engines": {
-        "node": "6.3.0",
+        "node": "7.3.0",
         "npm": "3.10.10"
     }
 }
