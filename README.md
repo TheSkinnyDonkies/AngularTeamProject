@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## The Application is Hosted at:
 
-* [Gallery App Link](https://gallery-team-app.herokuapp.com){:target="_blank"}
+* <https://gallery-team-app.herokuapp.com>
 
 ## Development server
 
